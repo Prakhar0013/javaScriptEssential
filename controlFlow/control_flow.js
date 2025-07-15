@@ -40,4 +40,8 @@ switch(userType){
     default:
         userCategory= "Unknown";
 }
-console.log("User CategorY:"+ userCategory);
+console.log("User Category:"+ userCategory);
+
+let isAuthenticated=true;
+let authenticationStatus= isAuthenticated? "Authenticated":"No Authenticated";
+console.log("Authentication Status:", authenticationStatus);
