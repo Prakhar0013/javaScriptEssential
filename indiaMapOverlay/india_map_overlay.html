@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Map State Abbreviations Overlay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .upload-section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .upload-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+        .canvas-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+        }
+        .download-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            background-color: #007B9A;
+        }
+        .instructions {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #666;
+        }
+        .file-input {
+            display: none;
+        }
+        #status {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .sample-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>India Map State Abbreviations Overlay</h1>
+        
+        <div class="sample-note">
+            <strong>Note:</strong> This tool overlays Indian state abbreviations on a map image. 
+            Upload your India map image (image1) or use the sample coordinates designed for standard political maps.
+        </div>
+
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Click "Upload Map Image" and select your India political map (image1)</li>
+                <li>The tool will automatically overlay state abbreviations in white text</li>
+                <li>Click "Download Result" to save the processed map as PNG</li>
+                <li>Abbreviations are positioned at approximate state centers</li>
+            </ul>
+        </div>
+
+        <div class="upload-section">
+            <input type="file" id="imageInput" class="file-input" accept="image/*">
+            <button class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                Upload Map Image (image1)
+            </button>
+        </div>
+
+        <div id="status"></div>
+
+        <div class="canvas-container">
+            <canvas id="mapCanvas" style="display: none;"></canvas>
+        </div>
+
+        <div class="download-section">
+            <a id="downloadLink" class="download-btn" style="display: none;" download="india_map_with_abbreviations.png">
+                Download Result
+            </a>
+        </div>
+    </div>
+
+    <script src="india_map_overlay.js"></script>
+</body>
+</html>
